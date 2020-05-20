@@ -1,0 +1,96 @@
+// ==========================================================================
+// Mixin
+// ==========================================================================
+
+@import 'function';
+
+@mixin size($width, $height) {
+  
+  @if( is-length($width) ) {
+    width : $width;
+  }
+
+  @else {
+    @error "`#{$width}` is not a valid length for the `$width` argument " + "in the `size` mixin.";
+  }
+
+  @if( is-length($height) ) {
+    height : $height;
+  }
+
+  @else {
+    @error "`#{$height}` is not a valid length for the `$height` argument " + "in the `size` mixin.";
+  }
+
+}
+
+@mixin screen($size) {
+  $desktop      : "(max-width: 992px)";
+  $tablet       : "(max-width: 768px)";
+  $phone        : "(max-width: 480px)";
+  $iphone-retina: "(max-width: 320px)";
+  
+  @if $size == desktop {
+    @media only screen and #{$desktop} {
+      @content;
+    }
+  }
+  @else if $size == tablet {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  }
+  @else if $size == phone {
+    @media only screen and #{$phone} {
+      @content;
+    }
+  }
+  @else if $size == iphone-retina {
+    @media only screen and #{$iphone-retina} {
+      @content;
+    }
+  }
+  @else {
+    @media only screen and #{$size} {
+      @content;
+    }
+  }
+}
+
+@mixin vertical-center() {
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin arrow( $width, $color ) {
+  @if ( is-length( $width ) and is-color( $color ) ) {
+    width: $width;
+    border-top: 1px solid $color;
+    background-color: $color;
+    position: absolute;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 5px;
+      background-color: $color;
+      bottom: 2px;
+      right: 0;
+      transform: rotate(43deg);
+      border-top: 1px solid $color;
+    }
+  }
+
+  @else {
+    @error 'Invalid length #{$width} or #{$color} for mixin arrow';
+  }
+}
+
+@mixin greater-than( $width, $height, $color ) {
+  @include size( $width, $height );
+  content     : '';
+  display     : inline-block;
+  border-top  : 1px solid $color;
+  border-right: 1px solid $color;
+  transform   : rotate(45deg);
+}

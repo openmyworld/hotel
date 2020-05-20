@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-dropdown-datepicker.min.js"></script>
+
+    <title>Bandai Silver Hotel</title>
+  </head>
+  <body>
+    <header class="header">
+      <form class="room" action="#" method="post">
+        <h2 class="room__vacancy-heading">
+          <span class="room__vacancy-heading-text">空き室検索</span>
+        </h2>
+        <div class="container room__inner">
+          <div class="room__checkin">
+            <h2 class="room__checkin-heading">チェックイン日</h2>
+            <input type="text" id="check-in">
+          </div>
+          <div class="room__checkout">
+            <h2 class="room__checkout-heading">チェックアウト日</h2>
+            <input type="text" id="check-out">
+          </div>
+          <div class="room__per">
+            <h2 class="room__per-heading">1室あたり</h2>
+            <div class="room__quantity">
+              <select class="room__per-number" name="per-number">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <span class="room__per-text">名</span>
+            </div>
+          </div>
+          <div class="room__number">
+            <h2 class="room__number-heading">室数</h2>
+            <div class="room__quantity">
+              <select class="room__number-number" name="room-number">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <span class="room__number-text">室</span>
+            </div>
+          </div>
+          <button class="room__vacancy-search">空き室検索 <i class="room__arrow"></i></button>
+          <button class="room__confirm-cancel">予約確認・キャンセル</button>
+          <div class="customer">
+            <h2 class="customer__heading">Customer s Club</h2>
+            <h3 class="customer__price">その日<span class="customer__price-best">一番お得な価格</span>でご宿泊。</h3>
+            <a href="javascript:void(0)" class="customer__login">会員様ログイン <i class="customer__login-arrow"></i></a>
+            <a href="javascript:void(0)" class="customer__info">カスタマーズクラブとは</a>
+          </div>
+        </div>
+      </form>
+      <div class="container header-inner">
+        <figure class="header__logo">
+          <a href="javascript:void(0)" class="header__logo-link">
+            <img src="img/header-logo.jpg" alt="" class="header__logo-image" />
+          </a>
+        </figure>
+        <button class="hamburger hamburger--vortex menu__hamburger" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <p class="header__phone">Tel. 025-243-3711</p>
+      </div>
+      <nav class="menu">
+        <div class="container menu__inner">
+          <ul class="menu__group">
+            <li class="menu__item">
+              <a href="javascript:void(0)" class="menu__link menu__link-active">ホーム</a>
+              <i class="menu__item-arrow"></i>
+            </li>
+            <li class="menu__item">
+              <a href="javascript:void(0)" class="menu__link">ご宿泊</a>
+              <i class="menu__item-arrow"></i>
+            </li>
+            <li class="menu__item">
+              <a href="javascript:void(0)" class="menu__link">レストラン</a>
+              <i class="menu__item-arrow"></i>
+            </li>
+            <li class="menu__item">
+              <a href="javascript:void(0)" class="menu__link">ご宴会・ご会合</a>
+              <i class="menu__item-arrow"></i>
+            </li>
+            <li class="menu__item">
+              <a href="javascript:void(0)" class="menu__link">ケータリング</a>
+              <i class="menu__item-arrow"></i>
+            </li>
+            <li class="menu__item">
+              <i class="menu__separator"></i>
+            </li>
+            <li class="menu__item">
+              <a href="javascript:void(0)" class="menu__link">よくあるご質問</a>
+              <i class="menu__item-arrow"></i>
+            </li>
+            <li class="menu__item">
+              <a href="javascript:void(0)" class="menu__link">お問い合わせ</a>
+              <i class="menu__item-arrow"></i>
+            </li>
+            <li class="menu__item">
+              <ul class="menu__sub">
+                <li class="menu__sub-item">
+                  <a href="javascript:void(0)" class="menu__sub-link">会社概要</a>
+                </li>
+                <li class="menu__sub-item">
+                  <a href="javascript:void(0)" class="menu__sub-link">リクルート</a>
+                </li>
+                <li class="menu__sub-item">
+                  <a href="javascript:void(0)" class="menu__sub-link">サイトマップ</a>
+                </li>
+                <li class="menu__sub-item">
+                  <a href="javascript:void(0)" class="menu__sub-link">個人情報保護方針</a>
+                </li>
+                <li class="menu__sub-item">
+                  <a href="javascript:void(0)" class="menu__sub-link">サイト利用規約</a>
+                </li>
+                <li class="menu__sub-item">
+                  <a href="javascript:void(0)" class="menu__sub-link">ホテル約款</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="parking-telephone">
+        <div class="container parking-telephone__inner">
+          <h2 class="parking-telephone__parking">アクセス・駐車場</h2>
+          <h2 class="parking-telephone__telephone">
+            <a href="tel:025-243-3711" class="parking-telephone__telephone-link">Tel. 025-243-3711</a>
+          </h2>
+        </div>
+      </div>
+    </header>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide hero">
+          <img class="hero__image" src="img/hero.jpg" alt="" />
+          <h2 class="hero__text">お客様に最高のリラクゾートを。</h2>
+        </div>
+        <div class="swiper-slide hero">
+          <img class="hero__image" src="img/hero.jpg" alt="" />
+          <h2 class="hero__text">お客様に最高のリラクゾートを。</h2>
+        </div>
+        <div class="swiper-slide hero">
+          <img class="hero__image" src="img/hero.jpg" alt="" />
+          <h2 class="hero__text">お客様に最高のリラクゾートを。</h2>
+        </div>
+        <div class="swiper-slide hero">
+          <img class="hero__image" src="img/hero.jpg" alt="" />
+          <h2 class="hero__text">お客様に最高のリラクゾートを。</h2>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="ads">
+      <figure class="ads__image">
+        <a href="javascript:void(0)">
+          <img src="img/ads.jpg" alt=""/ class="ads__image-src">
+        </a>
+      </figure>
+    </div>
+    <div class="view">
+      <div class="container view__inner">
+        <div class="view__group">
+          <div class="view__customer view__customer_mobile">
+            <h2 class="view__customer-text-jp">ご宿泊のお客様へ</h2>
+            <h2 class="view__customer-text-en view__customer-text-en_mobile">Customer for Stay</h2>
+          </div>
+
+          <a href="javascript:void(0)" class="view__link">
+            <div class="view__image">
+              <figure class="view__figure">
+                <img src="img/view-1.jpg" alt="" class="view__figure-image" />
+              </figure>
+              <h2 class="view__text">客室タイプ</h2>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" class="view__link">
+            <div class="view__image">
+              <figure class="view__figure">
+                <img src="img/view-2.jpg" alt="" class="view__figure-image" />
+              </figure>
+              <h2 class="view__text">客室設備</h2>
+            </div>
+          </a>
+          <a href="javascript:void(0)" class="view__link">
+            <div class="view__image">
+              <figure class="view__figure">
+                <img src="img/view-3.jpg" alt="" class="view__figure-image" />
+              </figure>
+              <h2 class="view__text">朝食案内</h2>
+            </div>
+          </a>
+          <a href="javascript:void(0)" class="view__link">
+            <div class="view__image">
+              <figure class="view__figure">
+                <img src="img/view-4.jpg" alt="" class="view__figure-image" />
+              </figure>
+              <h2 class="view__text">料金表</h2>
+            </div>
+          </a>
+          <a href="javascript:void(0)" class="view__link">
+            <div class="view__image">
+              <figure class="view__figure">
+                <img src="img/view-5.jpg" alt="" class="view__figure-image" />
+              </figure>
+              <h2 class="view__text">フロア案内</h2>
+            </div>
+          </a>
+          <a href="javascript:void(0)" class="view__link">
+            <div class="view__image">
+              <figure class="view__figure">
+                <img src="img/view-6.jpg" alt="" class="view__figure-image" />
+              </figure>
+              <h2 class="view__text">Q＆A</h2>
+            </div>
+          </a>
+          <a href="javascript:void(0)" class="view__link">
+            <div class="view__image">
+              <figure class="view__figure">
+                <img src="img/view-7.jpg" alt="" class="view__figure-image" />
+              </figure>
+              <h2 class="view__text">団体予約のお問い合わせ</h2>
+            </div>
+          </a>
+          <a href="javascript:void(0)" class="view__link">
+            <div class="view__image">
+              <figure class="view__figure">
+                <img src="img/view-8.jpg" alt="" class="view__figure-image" />
+              </figure>
+              <h2 class="view__text">アクセス・駐車場</h2>
+            </div>
+          </a>
+        </div>
+        <div class="view__customer">
+          <p class="view__customer-text-en">
+            Customer for Stay <i class="news__bar"></i>
+          </p>
+          <p class="view__customer-text-jp">ご宿泊のお客様へ</p>
+        </div>
+      </div>
+    </div>
+    <div class="news">
+      <div class="container news__inner">
+        <div class="news__rl news__rl_mobile">
+          <p class="news__rl-jp">お知らせ</p>
+          <p class="news__rl-en news__rl-en_mobile">News</p>
+        </div>
+        <div class="tabs">
+          <ul class="news__tab">
+            <li class="news__tab-item">
+              <a href="#tab1" class="news__tab-link news__tab-link_active">全て</a>
+            </li>
+            <li class="news__tab-item">
+              <a href="#tab2" class="news__tab-link">ご宿泊</a>
+            </li>
+            <li class="news__tab-item">
+              <a href="#tab3" class="news__tab-link">レストラン</a>
+            </li>
+            <li class="news__tab-item">
+              <a href="#tab4" class="news__tab-link">ご宴会・ご会合</a>
+            </li>
+            <li class="news__tab-item">
+              <a href="#tab5" class="news__tab-link">イベント</a>
+            </li>
+            <li class="news__tab-item">
+              <a href="#tab6" class="news__tab-link">ケータリング</a>
+            </li>
+            <li class="news__tab-item">
+              <a href="#tab7" class="news__tab-link">その他</a>
+            </li>
+          </ul>
+          
+          <div class="news__tab-content">
+            <div class="news__group news__tab-content_active" id="tab1">
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-1.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">banquet</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">2016秋のご宴会プラン</a>
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-2.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">restaurant</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">
+                      ステーキ＆ずわい蟹食べ放題 90分間【夜】
+                      [ダンスィングドール]</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-3.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">event</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link"
+                      >毎週、土曜と日曜はスイーツオーダーバイキング
+                      [ダンスィングドール]</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-4.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">restaurant</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link"
+                      >ほんの秋のいっときの、おいしい話。「新米セット」9月中旬頃から
+                      [銀鈴]</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-5.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">banquet</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link"
+                      >秋のスペシャルご宴会プラン</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__button-outer">
+                <div class="news__button">
+                  <a href="javascript:void(0)" class="button__text"
+                    >お知らせ一覧  <i class="news__button-arrow"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="news__group" id="tab2">
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-5.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">banquet</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link"
+                      >秋のスペシャルご宴会プラン</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__button-outer">
+                <div class="news__button">
+                  <a href="javascript:void(0)" class="button__text"
+                    >お知らせ一覧  <i class="news__button-arrow"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="news__group" id="tab3">
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-4.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">restaurant</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link"
+                      >ほんの秋のいっときの、おいしい話。「新米セット」9月中旬頃から
+                      [銀鈴]</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-5.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">banquet</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link"
+                      >秋のスペシャルご宴会プラン</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__button-outer">
+                <div class="news__button">
+                  <a href="javascript:void(0)" class="button__text"
+                    >お知らせ一覧  <i class="news__button-arrow"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="news__group" id="tab4">
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-1.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">banquet</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">2016秋のご宴会プラン</a>
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-2.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">restaurant</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">
+                      ステーキ＆ずわい蟹食べ放題 90分間【夜】
+                      [ダンスィングドール]</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__button-outer">
+                <div class="news__button">
+                  <a href="javascript:void(0)" class="button__text"
+                    >お知らせ一覧  <i class="news__button-arrow"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="news__group" id="tab5">
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-1.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">banquet</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">2016秋のご宴会プラン</a>
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-2.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">restaurant</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">
+                      ステーキ＆ずわい蟹食べ放題 90分間【夜】
+                      [ダンスィングドール]</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__button-outer">
+                <div class="news__button">
+                  <a href="#" class="button__text"
+                    >お知らせ一覧  <i class="news__button-arrow"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="news__group" id="tab6">
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-1.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">banquet</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">2016秋のご宴会プラン</a>
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-2.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">restaurant</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">
+                      ステーキ＆ずわい蟹食べ放題 90分間【夜】
+                      [ダンスィングドール]</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__button-outer">
+                <div class="news__button">
+                  <a href="javascript:void(0)" class="button__text"
+                    >お知らせ一覧  <i class="news__button-arrow"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="news__group" id="tab7">
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-1.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">banquet</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">2016秋のご宴会プラン</a>
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__detail">
+                <figure class="news__image">
+                  <img src="img/news-2.jpg" alt="" />
+                </figure>
+                <div class="news__info">
+                  <div class="news__time-type">
+                    <time class="news__time" datetime="2016-08-31">2016.08.31</time>
+                    <a href="javascript:void(0)" class="news__type">restaurant</a>
+                  </div>
+                  <h3 class="news__title">
+                    <a href="javascript:void(0)" class="news__title-link">
+                      ステーキ＆ずわい蟹食べ放題 90分間【夜】
+                      [ダンスィングドール]</a
+                    >
+                  </h3>
+                </div>
+                <i class="news__sign news__sign_mobile"></i>
+              </div>
+              <div class="news__button-outer">
+                <div class="news__button">
+                  <a href="javascript:void(0)" class="button__text"
+                    >お知らせ一覧  <i class="news__button-arrow"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news__rl">
+          <h2 class="news__rl-en">News <i class="news__bar"></i></h2>
+          <h2 class="news__rl-jp">お知らせ</h2>
+        </div>
+      </div>
+    </div>
+    <div class="social">
+      <div class="container social__inner">
+        <span class="social__text">Share</span>
+        <a href="javascript:void(0)" class="social__icon social_facebook"></a>
+        <a href="javascript:void(0)" class="social__icon social_twitter"></a>
+        <a href="javascript:void(0)" class="social__icon social_social"></a>
+      </div>      
+    </div>
+    <div class="reservation">
+      <div class="container">
+        <h2 class="reservation__heading">ご予約・お問い合わせ</h2>
+        <a href="tel:025-243-3711" class="reservation__phone">Tel. 025-243-3711</a>
+        <ul class="reservation__list">
+          <li class="reservation__item">
+            <a href="javascript:void(0)" class="reservation__link">各種お問い合わせ</a>
+            <i class="reservation__arrow"></i>
+          </li>
+          <li class="reservation__item">
+            <a href="javascript:void(0)" class="reservation__link">よくある御質問</a>
+            <i class="reservation__arrow"></i>
+          </li>
+          <li class="reservation__item">
+            <a href="javascript:void(0)" class="reservation__link">駐車場・アクセス</a>
+            <i class="reservation__arrow"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="club">
+      <div class="container">
+        <a href="javascript:void(0)" class="club__link">
+          <img src="img/customer-club.jpg" alt="" class="club__image">
+        </a>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="brand">
+        <div class="container brand__inner">
+          <ul class="brand__list">
+            <li class="brand__items">
+              <a href="javascript:void(0)">
+                <img src="img/brand-1.jpg" alt="brand" class="brand__items-image_pc">
+              </a>
+            </li>
+            <li class="brand__items">
+              <a href="javascript:void(0)">
+                <img src="img/brand-2.jpg" alt="brand" class="brand__items-image_pc">
+              </a>
+            </li>
+            <li class="brand__items">
+              <a href="javascript:void(0)">
+                <img src="img/brand-3.jpg" alt="brand" class="brand__items-image_pc">
+              </a>
+            </li>
+          </ul>
+          <figure class="brand__secure">
+            <a href="javascript:void(0)">
+              <img src="img/brand-4.jpg" alt="brand" class="brand__secure-image">
+            </a>
+          </figure>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="container footer-border">
+          <div class="footer-links__columns">
+            <h4 class="footer-links__title">ご宿泊</h4>
+            <ul class="footer-links__list">
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">客室タイプ</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">客室設備</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">朝食案内</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">料金表</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">フロア案内</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link"
+                  >団体予約のお問い合わせ</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-links__columns">
+            <h4 class="footer-links__title">レストラン</h4>
+            <ul class="footer-links__list">
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link"
+                  >4F サンセットラウンジ＆バー</a
+                >
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">4F 西洋料理屋<br>&nbsp;&nbsp;&nbsp;&nbsp;ダンスィングドール</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">ダンスィングドール</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link"
+                  >3F 新潟の旬菜と地酒の店 銀鈴</a
+                >
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">3F 中国料理 柳江苑</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">2F イタリアンカフェ<br>&nbsp;&nbsp;&nbsp;&nbsp;イルマッケローネ</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">イルマッケローネ</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">フロア案内</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-links__columns">
+            <h4 class="footer-links__title">ご宴会・ご会合</h4>
+            <ul class="footer-links__list">
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">5F 万代の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">5F 昭和の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">4F 千歳の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">3F 橘の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">5F 八千代の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">5F 泰平の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">3F 桂・萩の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">3F 桐の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">3F 桔梗の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">3F 楓の間</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">フロア案内</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">平面図</a>
+              </li>
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">宴会場概要表</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-links__columns">
+            <h4 class="footer-links__title">ケータリング</h4>
+            <ul class="footer-links__list">
+              <li class="footer-links__item">
+                <a href="javascript:void(0)" class="footer-links__link">ケータリング</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="links">
+        <div class="container">
+          <ul class="links__list">
+            <li class="links__item">
+              <a href="javascript:void(0)" class="links__link">よくあるご質問</a>
+            </li>
+            <li class="links__item">
+              <a href="javascript:void(0)" class="links__link">お問い合わせ</a>
+            </li>
+            <li class="links__item">
+              <a href="javascript:void(0)" class="links__link">アクセス・駐車場</a>
+            </li>
+            <li class="links__item">
+              <a href="javascript:void(0)" class="links__link">会社概要</a>
+            </li>
+            <li class="links__item">
+              <a href="javascript:void(0)" class="links__link">リクルート</a>
+            </li>
+            <li class="links__item">
+              <a href="javascript:void(0)" class="links__link">サイトマップ</a>
+            </li>
+            <li class="links__item">
+              <a href="javascript:void(0)" class="links__link">個人情報保護方針</a>
+            </li>
+            <li class="links__item">
+              <a href="javascript:void(0)" class="links__link">サイト利用規約</a>
+            </li>
+            <li class="links__item">
+              <a href="javascript:void(0)" class="links__link">ホテル約款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__info">
+        <div class="container footer__flex">
+          <div class="footer__detail">
+            <figure class="footer__logo">
+              <a href="" class="footer__logo-image">
+                <img src="img/logo.jpg" alt="logo" />
+              </a>
+            </figure>
+            <div class="footer__contact">
+              <p class="footer__address">
+                <span class="footer__address-number">〒950-8533</span>
+                <span class="footer__address-name">新潟県新潟市中央区万代1丁目3番30号</span>
+              </p>
+              <p class="footer__phone-fax">
+                <span class="footer__reservation">ご予約・お問い合わせ</span>
+                <span class="footer__phone">TEL 025-243-3711</span><span class="footer__fax">FAX 025-243-3720</span>
+              </p>
+            </div>
+          </div>
+
+          <p class="footer__copyright">
+            Copyright &copy; Bandai Silver Hotel. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <p class="fixed">
+      アクセス・駐車場 <i class="fixed__arrow"></i>
+    </p>
+    <script src="js/user.js" charset="UTF-8"></script>
+  </body>
+</html>
