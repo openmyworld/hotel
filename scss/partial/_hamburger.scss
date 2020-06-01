@@ -1,6 +1,7 @@
+@use 'color' as *;
+
 .hamburger {
-  // padding                   : 15px 15px;
-  padding: 13px 11px;
+  padding                   : 13px 11px;
   display                   : inline-block;
   cursor                    : pointer;
   transition-property       : opacity, filter;
@@ -9,32 +10,25 @@
   font                      : inherit;
   color                     : inherit;
   text-transform            : none;
-  // background-color          : transparent;
-  background-color: #202020;
+  background-color          : $mine-shaft-2;
   border                    : 0;
   margin                    : 0;
   overflow                  : visible;
-
-  &:hover {
-    opacity: 0.7;
-  }
+  outline                   : 0;
   
   &.is-active:hover {
-    opacity: 0.7;
 
     .hamburger-inner,
     .hamburger-inner::before,
     .hamburger-inner::after {
-      background-color: #000;
+      background-color: $white;
     }
   }
 }
 
 .hamburger-box {
-  // width   : 40px;
-  width: 24px;
-  // height  : 24px;
-  height: 17px;
+  width   : 24px;
+  height  : 17px;
   display : inline-block;
   position: relative;
 }
@@ -47,12 +41,9 @@
   &,
   &::before,
   &::after {
-    // width                     : 40px;
-    width: 24px;
-    // height                    : 4px;
-    height: 3px;
-    // background-color          : #000;
-    background-color: #ffffff;
+    width                     : 24px;
+    height                    : 3px;
+    background-color          : $white;
     border-radius             : 4px;
     position                  : absolute;
     transition-property       : transform;
@@ -67,12 +58,10 @@
   }
 
   &::before {
-    // top: -10px;
     top: -4px;
   }
 
   &::after {
-    // bottom: -10px;
     bottom: -4px;
   }
 }
